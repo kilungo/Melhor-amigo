@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #FFC0CB;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .question-container {
+            text-align: center;
+        }
+
+        .option {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #000;
+            cursor: pointer;
+            transition: left 0.5s ease;
+            position: relative;
+            background-color: #2f0889;
+        }
+
+        .no-option:hover {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="question-container">
+        <p>Quem é seu melhor amigo?</p>
+        <div class="option" id="yes-option">Joao Gabriel</div>
+        <div class="option no-option" id="no-option">Com certeza nao é ele</div>
+    </div>
+
+    <script>
+        var noOption = document.getElementById("no-option");
+        var yesOption = document.getElementById("yes-option");
+
+        yesOption.addEventListener("click", function() {
+            window.location.href = "https://www.youtube.com/watch?v=Yo0_-eMCkf4";
+        });
+
+        noOption.addEventListener("mouseover", function() {
+            var xPos = Math.random() * (window.innerWidth - 70); // Define uma posição horizontal aleatória
+            var yPos = Math.random() * (window.innerHeight - 20); // Define uma posição vertical aleatória
+            noOption.style.left = xPos + "px";
+            noOption.style.top = yPos + "px";
+        });
+    </script>
+</body>
+</html>
